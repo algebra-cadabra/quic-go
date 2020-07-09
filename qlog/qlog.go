@@ -44,6 +44,9 @@ func (t *tracer) TracerForClient(odcid protocol.ConnectionID) logging.Connection
 	return nil
 }
 
+func (t *tracer) DroppedPacket(net.Addr, logging.PacketType, protocol.ByteCount, logging.PacketDropReason) {
+}
+
 type connectionTracer struct {
 	mutex sync.Mutex
 
